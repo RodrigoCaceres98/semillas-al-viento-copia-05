@@ -13,7 +13,7 @@ class Parcelas {
 	}
 	method tieneSangreJoven()= plantas.any{planta=>planta.esJoven()}
 	method plantarUnaPlnata(planta){
-		if(self.hayLugarEnLaParcela() and  horasDeSolQueRecibePorDia >= planta.toleranciaPorDia() +2){
+		if(self.hayLugarEnLaParcela() and  self.horasDeSolQueRecibePorDia() >= planta.toleranciaPorDia() +2){
 			plantas.add(planta)
 	}
 	else { throw new Exception(message = "la parcela estaa llena") }
