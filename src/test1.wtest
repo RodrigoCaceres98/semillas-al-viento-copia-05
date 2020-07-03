@@ -1,0 +1,128 @@
+import Parcela.*
+
+import Plantas.*
+
+
+describe "Plantas y parcelas"{
+	const menta = new Menta()
+	const soja = new Soja()
+	const quinoa = new Quinoa()
+	const sojaTrangenica = new SojaTrangenica()
+	const hierbaBuena = new HiherbaBuena()
+	const menta1 = new Menta()
+	const soja1 = new Soja()
+	const quinoa1 = new Quinoa()
+	const sojaTrangenica1 = new SojaTrangenica()
+	const hierbaBuena1 = new HiherbaBuena()
+	
+	const parcelaComun = new Parcelas()
+	const parcelaEcologica = new ParcelasEcologicas()
+	const parcelaIndustrial = new Parcelas()
+	
+	fixture {
+		menta.altura(0.7)
+		menta.anioDeObtencion(2015) 
+		soja.altura(0.05)
+		soja.anioDeObtencion(2018)
+		quinoa.altura(0.4)
+		quinoa.anioDeObtencion(2016)
+		quinoa.espacioQueOcupa(0.2)
+		sojaTrangenica.altura(1)
+		sojaTrangenica.anioDeObtencion(2020)
+		hierbaBuena.altura(0.2)
+		hierbaBuena.anioDeObtencion(2022)
+		menta1.altura(0.7)
+		menta1.anioDeObtencion(2015) 
+		soja1.altura(1)
+		soja1.anioDeObtencion(2005)
+		quinoa1.altura(0.9)
+		quinoa1.anioDeObtencion(2000)
+		quinoa1.espacioQueOcupa(0.5)
+		sojaTrangenica1.altura(1.2)
+		sojaTrangenica1.anioDeObtencion(2010)
+		hierbaBuena1.altura(0.50)
+		hierbaBuena1.anioDeObtencion(2008)
+		
+		
+		parcelaComun.ancho(20)
+		parcelaComun.ancho(1)
+		parcelaComun.horasDeSolQueRecibePorDia(8)
+		parcelaEcologica.ancho(25)
+		parcelaEcologica.ancho(2)
+		parcelaEcologica.horasDeSolQueRecibePorDia(10)
+		parcelaIndustrial.ancho(30)
+		parcelaIndustrial.ancho(3)
+		parcelaIndustrial.horasDeSolQueRecibePorDia(9)
+		
+		
+		parcelaComun.plantarUnaPlnata(hierbaBuena)
+		parcelaComun.plantarUnaPlnata(quinoa)
+		parcelaComun.plantarUnaPlnata(sojaTrangenica1)
+		parcelaEcologica.plantarUnaPlnata(sojaTrangenica)
+		parcelaEcologica.plantarUnaPlnata(soja)
+		parcelaEcologica.plantarUnaPlnata(menta1)
+		parcelaIndustrial.plantarUnaPlnata(quinoa1)
+		parcelaIndustrial.plantarUnaPlnata(soja1)
+		parcelaComun.plantarUnaPlnata(hierbaBuena1)
+		parcelaIndustrial.plantarUnaPlnata(menta)
+		
+	}
+	
+	
+	
+	
+	test "Plantas"{
+		assert.equals(7,menta.toleranciaPorDia())
+		assert.equals(2.1,menta.espacioQueOcupa())
+		assert.notThat(menta.esFuerte())
+		assert.notThat(menta.daNuevasSemillas())
+		assert.notThat(menta.esIdeal(parcelaComun))
+		
+		assert.equals(6,soja.toleranciaPorDia())
+		assert.equals(0.25,soja.espacioQueOcupa())
+		assert.notThat(soja.esFuerte())
+		assert.notThat(soja.daNuevasSemillas())
+		assert.notThat(soja.esIdeal(parcelaComun))
+		
+	
+	
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
